@@ -1,0 +1,120 @@
+/* Salt Bread & Spice — responsive restaurant website */
+:root {
+  --green: #173b32;
+  --green-light: #285447;
+  --cream: #f7f2e8;
+  --paper: #fffdf8;
+  --orange: #d8753e;
+  --ink: #25332d;
+  --muted: #69736c;
+  --line: #e7dfd1;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.7; }
+img { display: block; width: 100%; }
+a { color: inherit; text-decoration: none; }
+.navbar { min-height: 76px; padding: 0 7%; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: var(--paper); position: sticky; top: 0; z-index: 10; box-shadow: 0 2px 18px #14271b0d; }
+.brand { font: 700 1.35rem var(--serif); color: var(--green); white-space: nowrap; }
+.brand span { color: var(--orange); font-style: italic; }
+.nav-links { display: flex; align-items: center; gap: clamp(16px, 3vw, 36px); list-style: none; margin: 0; padding: 0; }
+.nav-links a { font-size: .88rem; font-weight: 600; transition: color .2s ease; }
+.nav-links a:hover, .text-link:hover { color: var(--orange); }
+.nav-links .nav-cta { padding: 11px 19px; border: 1px solid var(--green); border-radius: 2px; }
+.hero { min-height: 660px; display: flex; align-items: center; padding: 90px 10%; position: relative; overflow: hidden; color: white; background: linear-gradient(90deg, rgba(10,35,27,.88), rgba(10,35,27,.52) 58%, rgba(10,35,27,.18)), url("BakeandSaltfish.jpg") center/cover no-repeat, var(--green); }
+.hero-content { max-width: 680px; position: relative; z-index: 1; }
+.eyebrow, .section-kicker { color: var(--orange); font-size: .76rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.hero h1 { margin: 18px 0; font: 800 clamp(3.1rem, 7vw, 6rem)/1.06 var(--serif); letter-spacing: -.04em; }
+.hero h1 em, h2 em { color: #e9a06e; font-weight: 600; }
+.hero-content > p:not(.eyebrow) { max-width: 480px; color: #f2eee5; font-size: 1.08rem; }
+.button { display: inline-flex; align-items: center; gap: 22px; margin-top: 20px; padding: 14px 22px; border: 0; border-radius: 2px; background: var(--orange); color: white; font: 700 .9rem var(--sans); cursor: pointer; transition: background .2s, transform .2s; }
+.button:hover { background: #bd6030; transform: translateY(-2px); }
+.hero-note { position: absolute; right: 7%; bottom: 35px; color: #f5e8d8; font: italic 1rem var(--serif); }
+.section-wrap { width: min(1120px, 86%); margin: 0 auto; }
+.about { padding-top: 112px; padding-bottom: 112px; }
+.about-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 10%; align-items: start; margin-top: 20px; }
+h2 { margin: 8px 0 20px; color: var(--green); font: 700 clamp(2.3rem, 4vw, 3.7rem)/1.13 var(--serif); letter-spacing: -.03em; }
+.about h2 em, .contact-intro h2 em { color: var(--orange); }
+.about-grid p { margin: 0 0 16px; color: var(--muted); }
+.text-link { display: inline-block; margin-top: 8px; color: var(--green); font-size: .9rem; font-weight: 700; }
+.menu-section { padding: 100px 0 110px; background: var(--cream); }
+.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 42px; }
+.section-heading h2 { margin-bottom: 0; }
+.section-heading > p { max-width: 350px; margin: 0 0 6px; color: var(--muted); }
+.menu-category { margin: 45px 0 20px; color: var(--green); font: 700 1.55rem var(--serif); }
+.menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.menu-card { overflow: hidden; background: var(--paper); box-shadow: 0 8px 24px #243a2b0b; }
+.menu-card img { height: 220px; object-fit: cover; background: #e5ddce; }
+.menu-card-body { padding: 20px 21px 23px; }
+.dish-title { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+.dish-title h4 { margin: 0; color: var(--green); font: 700 1.15rem/1.35 var(--serif); }
+.dish-title span { color: var(--orange); font-weight: 700; white-space: nowrap; }
+.menu-card p { margin: 12px 0 0; color: var(--muted); font-size: .88rem; line-height: 1.65; }
+.gallery-section { padding-top: 105px; padding-bottom: 110px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.gallery-item { position: relative; overflow: hidden; margin: 0; min-height: 230px; background: var(--green); }
+.gallery-item img { height: 100%; min-height: 230px; object-fit: cover; opacity: .88; transition: transform .45s, opacity .3s; }
+.gallery-item:hover img { transform: scale(1.06); opacity: .68; }
+.gallery-item figcaption { position: absolute; left: 20px; bottom: 17px; color: white; font: 700 1.3rem var(--serif); text-shadow: 0 2px 10px #0008; }
+.chefs-section { padding: 100px 0 110px; background: var(--green); color: white; }
+.chefs-section h2 { color: white; margin-bottom: 45px; }
+.chef-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; }
+.chef-card { padding-top: 22px; border-top: 1px solid #ffffff45; }
+.chef-number { color: #e9a06e; font-size: .8rem; letter-spacing: .12em; }
+.chef-card h3 { margin: 14px 0 2px; font: 700 1.45rem var(--serif); }
+.chef-role { margin: 0 0 15px; color: #e9a06e; font-size: .82rem; font-weight: 700; }
+.chef-card p:last-child { color: #d2ddd6; font-size: .9rem; }
+.contact-section { display: grid; grid-template-columns: 1fr .8fr 1.1fr; gap: 45px; padding-top: 110px; padding-bottom: 110px; }
+.contact-intro h2 { margin-bottom: 18px; }
+.contact-intro > p, .contact-details p { color: var(--muted); }
+.contact-details { padding-top: 18px; }
+.contact-details p { margin: 0 0 24px; font-size: .92rem; }
+.contact-details strong { color: var(--green); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; }
+.contact-form { display: flex; flex-direction: column; gap: 9px; }
+.contact-form label { margin-top: 7px; color: var(--green); font-size: .8rem; font-weight: 700; }
+.contact-form input, .contact-form textarea { width: 100%; padding: 13px 14px; border: 1px solid var(--line); border-radius: 0; background: #fff; color: var(--ink); font: .9rem var(--sans); }
+.contact-form input:focus, .contact-form textarea:focus { outline: 2px solid #d8753e66; border-color: var(--orange); }
+.contact-form textarea { resize: vertical; }
+.contact-form .button { align-self: flex-start; margin-top: 10px; }
+.contact-form small { color: var(--muted); font-size: .72rem; }
+.site-footer { padding: 42px 7%; text-align: center; background: #102e26; color: #d2ddd6; }
+.footer-brand { color: white; }
+.site-footer > p { margin: 8px 0; font-size: .86rem; }
+.site-footer .copyright { margin-top: 25px; color: #a8b8ae; font-size: .75rem; }
+@media (max-width: 850px) {
+  .navbar { padding: 16px 5%; flex-direction: column; gap: 12px; }
+  .nav-links { flex-wrap: wrap; justify-content: center; gap: 12px 22px; }
+  .hero { min-height: 570px; padding: 75px 7%; }
+  .about-grid, .contact-section { grid-template-columns: 1fr 1fr; gap: 30px; }
+  .contact-intro { grid-column: 1 / -1; }
+  .contact-form { grid-column: 2; grid-row: 2; }
+  .menu-grid { gap: 14px; }
+  .menu-card img { height: 180px; }
+  .dish-title { flex-direction: column; gap: 4px; }
+}
+@media (max-width: 600px) {
+  html { scroll-padding-top: 120px; }
+  .brand { font-size: 1.25rem; }
+  .nav-links { gap: 9px 15px; }
+  .nav-links a { font-size: .78rem; }
+  .nav-links .nav-cta { padding: 7px 12px; }
+  .hero { min-height: 540px; padding: 65px 7%; background-position: 58% center; }
+  .hero h1 { font-size: clamp(2.8rem, 14vw, 4.2rem); }
+  .hero-note { right: 7%; font-size: .85rem; }
+  .section-wrap { width: 88%; }
+  .about, .gallery-section, .contact-section { padding-top: 75px; padding-bottom: 75px; }
+  .about-grid, .section-heading, .contact-section { display: block; }
+  .about-grid > div { margin-top: 20px; }
+  .section-heading > p { margin-top: 14px; }
+  .menu-section, .chefs-section { padding: 75px 0; }
+  .menu-grid, .gallery-grid, .chef-grid { grid-template-columns: 1fr; }
+  .menu-category { margin-top: 34px; }
+  .menu-card img { height: 235px; }
+  .dish-title { flex-direction: row; }
+  .gallery-item, .gallery-item img { min-height: 250px; }
+  .chef-grid { gap: 26px; }
+  .contact-details { margin: 28px 0; }
+  .contact-form { margin-top: 25px; }
+}
